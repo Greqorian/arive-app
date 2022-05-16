@@ -4,9 +4,9 @@
   <h3 align="center">Arive_App
 </h3>
 
-  <p align="center">
-    Web application make your hobbies fly
-  </p>
+  <h3 align="center">
+    ☁️ Web application to make your hobbies fly
+  </h3>
 </p>
 
 <!-- ABOUT THE PROJECT -->
