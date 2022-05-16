@@ -1,0 +1,99 @@
+// colors
+$darkblue: #457b9d;
+$mediumblue: #a7cae0;
+$whitest: #fff;
+$accent: #eaf1f6;
+$hover: rgba(255, 255, 255, 0.37);
+
+// variables
+$brk-mobile: 600px;
+$padding: 0.5em;
+$border: 1px solid $whitest;
+$radius: 0.5em;
+
+// mixins
+
+@mixin row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin shadow {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.header {
+  background-image: linear-gradient(to top left, transparent, $hover);
+}
+
+//html elements
+
+button {
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+  border-radius: radius;
+  background-color: transparent;
+
+  &:hover {
+    background-color: $accent;
+  }
+}
+
+label {
+  font-size: 1.6em;
+}
+
+input {
+  border: none;
+  background: none;
+  font-size: 1em;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+select {
+  border: none;
+  background: none;
+  font-size: 1em;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+p {
+  font-size: 1em;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+//scrollbar
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $hover;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $accent;
+}

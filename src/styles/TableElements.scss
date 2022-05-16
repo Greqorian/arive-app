@@ -1,0 +1,50 @@
+@import './globalStyles.scss';
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+
+  &:hover {
+    background-color: $hover;
+  }
+}
+
+.flex-row-column {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $brk-mobile) {
+    flex-direction: row;
+  }
+}
+
+.padding {
+  padding: $padding;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.width-30 {
+  flex: 1 1 30%;
+}
+
+.width-70 {
+  flex: 1 1 70%;
+}
+
+.scrollable {
+  overflow-y: hidden;
+  overflow-y: auto;
+  max-height: 15em;
+}
+
+.border {
+  border: $border;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}

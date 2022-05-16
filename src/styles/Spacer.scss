@@ -1,0 +1,10 @@
+@import './globalStyles.scss';
+
+.spacer {
+  display: none;
+
+  @media (min-width: $brk-mobile) {
+    display: flex;
+    flex: 1 99 20%;
+  }
+}

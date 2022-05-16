@@ -1,0 +1,15 @@
+@import './globalStyles.scss';
+
+.container-page {
+  display: flex;
+  flex-direction: row;
+  left: 0;
+  right: 0;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom left, $darkblue, $accent);
+  justify-content: center;
+
+  @media (min-width: $brk-mobile) {
+    padding: 2em;
+  }
+}
