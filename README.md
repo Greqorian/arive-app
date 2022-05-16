@@ -40,6 +40,9 @@ To obtain the IP you can run **yarn start** and take the IP from the console out
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Sass](https://sass-lang.com/)
+- Express
+- Redux Toolkit
+- React Query
 
 <!-- CONTACT -->
 
