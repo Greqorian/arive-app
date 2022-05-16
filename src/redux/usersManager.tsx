@@ -17,7 +17,7 @@ export interface IUsersState {
   users: UsersType[]
 }
 
-const initialState: IUsersState = {
+export const initialState: IUsersState = {
   activeUser: 1,
   users: [],
 }
