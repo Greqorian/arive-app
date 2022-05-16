@@ -41,15 +41,11 @@
 }
 
 .scrollable {
-  overflow-y: hidden;
+  overflow-x: hidden;
   overflow-y: auto;
   max-height: 15em;
 }
 
 .border {
   border: $border;
-}
-
-.wrap {
-  flex-wrap: wrap;
 }

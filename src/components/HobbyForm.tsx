@@ -25,6 +25,7 @@ const HobbyForm = () => {
         <select
           id="passion-select"
           name="passion-select"
+          className="select-control"
           value={passion}
           onChange={(e) => setPassion(e.target.value)}
         >
@@ -47,6 +48,7 @@ const HobbyForm = () => {
         <select
           id="date-select"
           name="date-select"
+          className="select-control"
           value={date}
           onChange={(e) => setDate(e.target.value)}
         >

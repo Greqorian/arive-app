@@ -19,9 +19,7 @@ const UserList = () => {
           return (
             <span
               key={u.id}
-              className={
-                'clickable' + (activeUser === u.id ? 'highlight-row' : '')
-              }
+              className={activeUser === u.id ? 'highlight-row' : 'clickable'}
               onClick={() => dispatch(setActiveUser(u.id))}
             >
               <TableRow>
