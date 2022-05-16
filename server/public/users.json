@@ -1,0 +1,63 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Bella Canary",
+      "hobbies": [
+        {
+          "type": "flower collecting",
+          "passion": "medium",
+          "date": "2010"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Susan Eagle",
+      "hobbies": [
+        {
+          "type": "flying above the clouds",
+          "passion": "medium",
+          "date": "2007"
+        },
+        {
+          "type": "hunting out the best opportunities",
+          "passion": "high",
+          "date": "2010"
+        },
+        {
+          "type": "long-distance travels",
+          "passion": "medium",
+          "date": "2007"
+        },
+        {
+          "type": "looking with dignity",
+          "passion": "high",
+          "date": "2004"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Yasmin Owl",
+      "hobbies": [
+        {
+          "type": "reading at night",
+          "passion": "low",
+          "date": "2013"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Lillie Sparrow",
+      "hobbies": [
+        {
+          "type": "observing people in public places",
+          "passion": "medium",
+          "date": "2016"
+        }
+      ]
+    }
+  ]
+}
