@@ -3,9 +3,14 @@
 .flex-row {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 
   &:hover {
     background-color: $hover;
+  }
+
+  @media (min-width: $brk-mobile) {
+    flex-wrap: nowrap;
   }
 }
 

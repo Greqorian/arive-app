@@ -8,6 +8,7 @@
   min-height: 100vh;
   background-image: linear-gradient(to bottom left, $darkblue, $accent);
   justify-content: center;
+  overflow-y: hidden;
 
   @media (min-width: $brk-mobile) {
     padding: 2em;
