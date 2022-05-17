@@ -1,17 +1,14 @@
 import { TableRow, TableCell } from './sharedComponents/TableElements'
-import { useSelector, useDispatch } from 'react-redux'
-import { setActiveUser } from '../redux/usersManager'
-
-import { RootState } from '../redux/store'
 import '../styles/UserList.scss'
+import { UsersType } from '../redux/usersManager'
 
-const UserList = () => {
-  const users = useSelector((state: RootState) => state.usersManager.users)
-  const activeUser = useSelector(
-    (state: RootState) => state.usersManager.activeUser
-  )
-  const dispatch = useDispatch()
+type UserListType = {
+  activeUser: number
+  users: UsersType[]
+  handleUser: (value: number | string) => void
+}
 
+const UserList = ({ activeUser, users, handleUser }: UserListType) => {
   return (
     <>
       {users &&
@@ -20,7 +17,7 @@ const UserList = () => {
             <span
               key={u.id}
               className={activeUser === u.id ? 'highlight-row' : 'clickable'}
-              onClick={() => dispatch(setActiveUser(u.id))}
+              onClick={() => handleUser(u.id)}
             >
               <TableRow>
                 <TableCell>{u.name}</TableCell>

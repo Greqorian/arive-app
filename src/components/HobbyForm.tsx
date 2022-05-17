@@ -1,8 +1,7 @@
 import { TableRow, TableCell } from './sharedComponents/TableElements'
 import { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addHobby } from '../redux/usersManager'
-import { RootState } from '../redux/store'
 
 import '../styles/InputForm.scss'
 
@@ -32,6 +31,7 @@ const HobbyForm = () => {
           <option value="low">low</option>
           <option value="medium">medium</option>
           <option value="high">high</option>
+          <option value="high">very-high</option>
         </select>
       </TableCell>
       <TableCell isLarge={true}>

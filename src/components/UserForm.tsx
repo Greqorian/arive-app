@@ -1,16 +1,13 @@
 import { useState } from 'react'
 import { TableRow, TableCell } from './sharedComponents/TableElements'
-import { useSelector, useDispatch } from 'react-redux'
-import { addUser } from '../redux/usersManager'
-import { RootState } from '../redux/store'
-
 import '../styles/InputForm.scss'
 
-const UserForm = () => {
-  const [name, setName] = useState('')
+type UserFormType = {
+  handleUser: (value: number | string) => void
+}
 
-  const users = useSelector((state: RootState) => state.usersManager.users)
-  const dispatch = useDispatch()
+const UserForm = ({ handleUser }: UserFormType) => {
+  const [name, setName] = useState('')
 
   return (
     <TableRow>
@@ -28,7 +25,7 @@ const UserForm = () => {
         className="button"
         onClick={() => {
           if (name !== '') {
-            dispatch(addUser(name))
+            handleUser(name)
           }
           setName('')
         }}

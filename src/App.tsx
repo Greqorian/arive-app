@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 
 import LandingPage from './components/LandingPage'
 
-const queryClient = new QueryClient({
+export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       refetchOnWindowFocus: false,
