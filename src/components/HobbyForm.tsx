@@ -1,76 +1,81 @@
 import { TableRow, TableCell } from './sharedComponents/TableElements'
-import { useState } from 'react'
+import { useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import { addHobby } from '../redux/usersManager'
 
 import '../styles/InputForm.scss'
 
 const HobbyForm = () => {
-  const [type, setType] = useState('')
-  const [passion, setPassion] = useState('low')
-  const [date, setDate] = useState('2000')
-
   const dispatch = useDispatch()
 
-  const dipatchHobby = () => {
-    if (type !== '') {
-      dispatch(addHobby({ type: type, passion: passion, date: date }))
+  const passionRef = useRef<HTMLSelectElement>(null)
+  const dateRef = useRef<HTMLSelectElement>(null)
+  const hobbyTypeRef = useRef<HTMLInputElement>(null)
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    if (
+      passionRef.current?.value &&
+      dateRef.current?.value &&
+      hobbyTypeRef.current?.value
+    ) {
+      dispatch(
+        addHobby({
+          type: hobbyTypeRef.current?.value,
+          passion: passionRef.current?.value,
+          date: dateRef.current?.value,
+        })
+      )
     }
   }
 
   return (
-    <TableRow>
-      <TableCell>
-        <select
-          id="passion-select"
-          name="passion-select"
-          className="select-control"
-          value={passion}
-          onChange={(e) => setPassion(e.target.value)}
-        >
-          <option value="low">low</option>
-          <option value="medium">medium</option>
-          <option value="high">high</option>
-          <option value="high">very-high</option>
-        </select>
-      </TableCell>
-      <TableCell isLarge={true}>
-        <input
-          className="input-control-long"
-          type="text"
-          placeholder="Enter user hobby"
-          maxLength={30}
-          value={type}
-          onChange={(e) => setType(e.target.value)}
-        />
-      </TableCell>
-      <TableCell>
-        <select
-          id="date-select"
-          name="date-select"
-          className="select-control"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-        >
-          {Array.from(Array(20)).map((a, i) => {
-            return (
-              <option key={i} value={2000 + i}>
-                {2000 + i}
-              </option>
-            )
-          })}
-        </select>
-      </TableCell>
+    <form onSubmit={handleSubmit}>
+      <TableRow>
+        <TableCell>
+          <select
+            id="passion-select"
+            name="passion"
+            className="select-control"
+            ref={passionRef}
+          >
+            <option value="low">low</option>
+            <option value="medium">medium</option>
+            <option value="high">high</option>
+            <option value="high">very-high</option>
+          </select>
+        </TableCell>
+        <TableCell isLarge={true}>
+          <input
+            className="input-control-long"
+            name="hobby_type"
+            type="text"
+            placeholder="Enter user hobby"
+            maxLength={30}
+            ref={hobbyTypeRef}
+          />
+        </TableCell>
+        <TableCell>
+          <select
+            id="date-select"
+            name="date"
+            className="select-control"
+            ref={dateRef}
+          >
+            {Array.from(Array(20)).map((a, i) => {
+              return (
+                <option key={i} value={2000 + i}>
+                  {2000 + i}
+                </option>
+              )
+            })}
+          </select>
+        </TableCell>
 
-      <button
-        className="button"
-        onClick={() => {
-          dipatchHobby()
-        }}
-      >
-        ➕
-      </button>
-    </TableRow>
+        <button type="submit">➕</button>
+      </TableRow>
+    </form>
   )
 }
 
