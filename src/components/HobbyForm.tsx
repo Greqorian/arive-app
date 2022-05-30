@@ -2,6 +2,7 @@ import { TableRow, TableCell } from './sharedComponents/TableElements'
 import { useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import { addHobby } from '../redux/usersManager'
+import SelectForm from './sharedComponents/Selectform'
 
 import '../styles/InputForm.scss'
 
@@ -34,7 +35,13 @@ const HobbyForm = () => {
     <form onSubmit={handleSubmit}>
       <TableRow>
         <TableCell>
-          <select
+          <SelectForm
+            id={'passion-select'}
+            name={'passion'}
+            optionArray={['low', 'medium', 'high', 'very-high']}
+            ref={passionRef}
+          />
+          {/* <select
             id="passion-select"
             name="passion"
             className="select-control"
@@ -44,7 +51,7 @@ const HobbyForm = () => {
             <option value="medium">medium</option>
             <option value="high">high</option>
             <option value="high">very-high</option>
-          </select>
+          </select> */}
         </TableCell>
         <TableCell isLarge={true}>
           <input
