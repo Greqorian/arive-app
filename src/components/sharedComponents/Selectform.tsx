@@ -12,12 +12,12 @@ const SelectForm = forwardRef<HTMLSelectElement, SelectFormType>(
     return (
       <select id={id} name={name} className="select-control" ref={ref}>
         {optionArray.map((o, index) => {
-          return <option value={o}>{o}</option>
+          return (
+            <option key={index} value={o}>
+              {o}
+            </option>
+          )
         })}
-        {/* <option value="low">low</option>
-  <option value="medium">medium</option>
-  <option value="high">high</option>
-  <option value="high">very-high</option> */}
       </select>
     )
   }
