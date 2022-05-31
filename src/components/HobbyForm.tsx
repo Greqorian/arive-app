@@ -31,6 +31,8 @@ const HobbyForm = () => {
     }
   }
 
+  const yearsArr = Array.from(Array(20), (_, i) => 2000 + i)
+
   return (
     <form onSubmit={handleSubmit}>
       <TableRow>
@@ -41,17 +43,6 @@ const HobbyForm = () => {
             optionArray={['low', 'medium', 'high', 'very-high']}
             ref={passionRef}
           />
-          {/* <select
-            id="passion-select"
-            name="passion"
-            className="select-control"
-            ref={passionRef}
-          >
-            <option value="low">low</option>
-            <option value="medium">medium</option>
-            <option value="high">high</option>
-            <option value="high">very-high</option>
-          </select> */}
         </TableCell>
         <TableCell isLarge={true}>
           <input
@@ -64,20 +55,12 @@ const HobbyForm = () => {
           />
         </TableCell>
         <TableCell>
-          <select
-            id="date-select"
-            name="date"
-            className="select-control"
+          <SelectForm
+            id={'date-select'}
+            name={'date'}
+            optionArray={yearsArr}
             ref={dateRef}
-          >
-            {Array.from(Array(20)).map((a, i) => {
-              return (
-                <option key={i} value={2000 + i}>
-                  {2000 + i}
-                </option>
-              )
-            })}
-          </select>
+          />
         </TableCell>
 
         <button type="submit">➕</button>

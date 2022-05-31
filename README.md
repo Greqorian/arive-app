@@ -13,7 +13,17 @@
 
 ### About The Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). On top of that it uses typescript, react-query, node-sass.
+This project serves to demonstrate the design patterns and basic libraries of React applications.
+It as bootstrapped with [Create React App](https://github.com/facebook/create-react-app). On top of that it uses typescript, react-query for retrieving data from the server, redux toolkit for global state management, sass for style management, node express.js to mock server api and also JEST plus enzyme for writing unit tests.
+
+Design patterns used:
+
+- division of components into reusable and not reusable
+- separate sass files for each component
+- composition design pattern over inheritance
+- lifting up state to avoid unnecessary use of redux
+- uncontrolled components with forms to avoid unnecessary rendering
+- forwardRef to split uncontrolled components
 
 ### How to run the app
 
